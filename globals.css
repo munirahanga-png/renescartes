@@ -1,0 +1,141 @@
+/* Updated: 1768055180952 */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "STHeiti TC", "Inter", sans-serif;
+  --font-mono: var(--font-geist-mono);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0rem; /* Sharp edges for corporate feel */
+  --background: #FFFFFF;
+  --foreground: #050C07;
+  --card: #FFFFFF;
+  --card-foreground: #050C07;
+  --popover: #FFFFFF;
+  --popover-foreground: #050C07;
+  --primary: #123057;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F8F9FA;
+  --secondary-foreground: #123057;
+  --muted: #F8F9FA;
+  --muted-foreground: #6C757D;
+  --accent: #E1702C;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC3545;
+  --border: #DEE2E6;
+  --input: #DEE2E6;
+  --ring: #123057;
+  
+  --chart-1: #123057;
+  --chart-2: #1D4B85;
+  --chart-3: #2A66B3;
+  --chart-4: #E1702C;
+  --chart-5: #F0A06E;
+  
+  --sidebar: #123057;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #E1702C;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1D4B85;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #1D4B85;
+  --sidebar-ring: #FFFFFF;
+}
+
+.dark {
+  --background: #050C07;
+  --foreground: #FFFFFF;
+  --card: #0A1410;
+  --card-foreground: #FFFFFF;
+  --popover: #0A1410;
+  --popover-foreground: #FFFFFF;
+  --primary: #FFFFFF;
+  --primary-foreground: #123057;
+  --secondary: #123057;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1A2520;
+  --muted-foreground: #ADB5BD;
+  --accent: #E1702C;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E4606D;
+  --border: #2D3732;
+  --input: #2D3732;
+  --ring: #FFFFFF;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight uppercase;
+    color: var(--primary);
+  }
+  
+  .section-title {
+    @apply text-sm font-bold uppercase tracking-[0.2em] text-[#E1702C] mb-4;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-5xl text-[#123057] font-bold mb-8 leading-tight;
+  }
+}
+
+.corporate-container {
+  @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+}
+
+.btn-primary {
+  @apply bg-[#E1702C] text-white px-6 py-3 font-semibold transition-all hover:bg-[#C95E1F] disabled:opacity-50;
+}
+
+.btn-outline {
+  @apply border-2 border-[#123057] text-[#123057] px-6 py-3 font-semibold transition-all hover:bg-[#123057] hover:text-white disabled:opacity-50;
+}
